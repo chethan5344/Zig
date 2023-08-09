@@ -8,7 +8,7 @@ pub fn parser(buf: []const u8, radix: u8) !u64 {
         if (digit >= radix) {
             return error.InvalidChar;
         }
-
+            // @mulWithOverFlow takes the type , a, b values to be multiplied , and pointer the variable where the result to be stored 
         if (@mulWithOverflow(u64, x, radix, &x)) return error.OverFlow;
         if (@addWithOverflow(u64, x, digit, &x)) return error.OverFlow;
     }
